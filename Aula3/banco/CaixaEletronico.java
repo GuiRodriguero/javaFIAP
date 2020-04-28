@@ -2,8 +2,8 @@ package Aula3.banco;
 import javax.swing.JOptionPane;
 
 public class CaixaEletronico {
+
     private float saldo;
-    private boolean logado;
 
     public void sacar(float valor){
         if(saldo >= valor){
@@ -19,15 +19,12 @@ public class CaixaEletronico {
         JOptionPane.showMessageDialog(null, "Valor do Depósito: " + valor +  "\nSaldo atual: " + getSaldo());
     }
 
-    public float getSaldo(){
+
+    public void imprimirDadosConta(String nome, String cpf, String nConta){
+        JOptionPane.showMessageDialog(null, "Nome: " + nome + "\nNúmero da Conta: " + nConta +"\nCPF: " + cpf + "\n\nSaldo = " + getSaldo());
+    }
+
+    public float getSaldo() {
         return saldo;
-    }
-
-    public void imprimirDadosConta(){
-
-    }
-
-    public boolean isLogar(Conta conta, String senha){
-        return logado;
     }
 }
