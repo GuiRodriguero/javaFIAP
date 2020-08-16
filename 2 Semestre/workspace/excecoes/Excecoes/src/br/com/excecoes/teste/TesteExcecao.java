@@ -1,0 +1,26 @@
+package br.com.excecoes.teste;
+
+import javax.swing.JOptionPane;
+import br.com.excecoes.beans.Aluno;
+import br.com.excecoes.exception.Excecao;
+import br.com.excecoes.tela.Magica;
+
+public class TesteExcecao {
+	
+
+	public static void main(String[] args) {
+		try {
+			int numero = Magica.i("Digite um número: ");
+			System.out.println(numero);
+			
+			Aluno aluno = new Aluno();
+			aluno.setNome(Magica.s("Nome: "));
+			
+			System.out.println(aluno.getNome().length());
+		}catch(Exception e){
+			System.out.println(Excecao.tratarExcecao(e));
+		}finally {
+			System.out.println("Até logo");
+		}
+	}
+}

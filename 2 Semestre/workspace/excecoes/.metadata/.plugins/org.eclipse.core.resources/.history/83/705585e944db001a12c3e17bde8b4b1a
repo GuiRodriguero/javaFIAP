@@ -1,0 +1,24 @@
+package br.com.excecoes.teste;
+
+import javax.swing.JOptionPane;
+import br.com.excecoes.beans.Aluno;
+import br.com.excecoes.exception.Excecao;
+
+public class TesteExcecao {
+	
+	public static int i(String msg) {
+		return Integer.parseInt(s(msg));
+	}
+	
+	public static void main(String[] args) {
+		Aluno objeto = new Aluno();
+		
+		try {
+			Aluno aluno = new Aluno();
+			aluno.setNome(null);
+			System.out.println(aluno.getNome().length());
+		}catch(Exception e){
+			System.out.println(Excecao.tratarExcecao(e));
+		}
+	}
+}

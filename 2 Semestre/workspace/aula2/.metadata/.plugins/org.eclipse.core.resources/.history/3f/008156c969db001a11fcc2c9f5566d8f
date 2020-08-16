@@ -1,0 +1,23 @@
+package br.com.conexao.teste;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import br.com.conexao.excecao.Excecao;
+
+public class TesteConexao {
+	
+	//Pasta lib criada para colocar o driver jdbc para criar uma referência interna
+	//Isso faz com que se o projeto é exportado, o driver sempre acompanhará
+	
+	public static void main(String[] args) { 
+		//Driver Manager -> Classe que cria conexão com o banco
+		//DriverManager.getConnection("url", "usu", "pwd"); url == String de conexão
+		try { // o Driver Manager retorna uma conexão 
+			Connection fiap = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL", "rm85499", "131002"); //É uma exceção checked porque sem um try catch o java avisa que poderá ocorrer um erro
+		}catch (Exception e){
+			System.out.println(Excecao.tratarExcecao(e));
+		}
+		
+	}
+}
